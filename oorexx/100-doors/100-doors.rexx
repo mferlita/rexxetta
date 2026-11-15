@@ -1,6 +1,8 @@
-doors = .array~new(100)    -- array containing all of the doors
+#!/usr/bin/env rexx
+
+doors = .Array~new(100)    -- array containing all of the doors
 do i = 1 to doors~size     -- initialize with a collection of closed doors
-   doors[i] = .door~new(i)
+   doors[i] = .Door~new(i)
 end
 
 do inc = 1 to doors~size
@@ -8,12 +10,16 @@ do inc = 1 to doors~size
     doors[d]~toggle
   end
 end
+
 say "The open doors after 100 passes:"
 do door over doors
-  if door~isopen then say door
+  if door~isOpen then
+    say door
 end
 
-::class door           -- simple class to represent a door
+/********* Directives *********************************************************/
+::class Door           -- simple class to represent a door
+
 ::method init          -- initialize an instance of a door
   expose id state      -- instance variables of a door
   use strict arg id    -- set the id
@@ -23,7 +29,7 @@ end
   expose state
   state = \state
 
-::method isopen        -- test if the door is open
+::method isOpen        -- test if the door is open
   expose state
   return state
 
