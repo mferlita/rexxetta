@@ -25,6 +25,7 @@ say theShape~name
 say "theShape~area:" theShape~area
 
 /* Directives */
+
 ::class Shape
 
 ::method area abstract

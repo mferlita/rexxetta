@@ -22,6 +22,7 @@ do door over doors
 end
 
 /* Directives */
+
 ::class Door            -- simple class to represent a door
 
 ::method init           -- initialize an instance of a door
