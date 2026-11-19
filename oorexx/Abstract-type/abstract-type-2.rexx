@@ -3,7 +3,7 @@
 *          https://rosettacode.org/wiki/Abstract_type
 * Author: Rony G. Flatscher, 2012-05-26
 * Changed/edited: Walter Pachl, 2012-05-28
-*                 Matt Ferlita, 2026-11-18
+*                 Matt Ferlita, 2026-11-19
 */
 
 rect = .Rectangle~new(5,2)
