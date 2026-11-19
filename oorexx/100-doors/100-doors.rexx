@@ -1,4 +1,8 @@
-#!/usr/bin/env rexx
+/*
+* Purpose: Solves 100 Doors problem, see https://rosettacode.org/wiki/100_doors
+* Author: unknown, unknown
+* Changed/edited: Matt Ferlita, 2026-11-18
+*/
 
 doors = .Array~new(100)    -- array containing all of the doors
 do i = 1 to doors~size     -- initialize with a collection of closed doors
@@ -13,32 +17,36 @@ end
 
 say "The open doors after 100 passes:"
 do door over doors
-  if door~isOpen then
-    say door
+   if door~isOpen then
+      say door
 end
 
-/********* Directives *********************************************************/
-::class Door           -- simple class to represent a door
+/* Directives */
+::class Door            -- simple class to represent a door
 
-::method init          -- initialize an instance of a door
-  expose id state      -- instance variables of a door
-  use strict arg id    -- set the id
-  state = .false       -- initial state is closed
+::method init           -- initialize an instance of a door
+   expose id state      -- instance variables of a door
+   use strict arg id    -- set the id
+   state = .false       -- initial state is closed
 
-::method toggle        -- toggle the state of the door
-  expose state
-  state = \state
+::method toggle         -- toggle the state of the door
+   expose state
+   state = \state
 
-::method isOpen        -- test if the door is open
-  expose state
-  return state
+::method isOpen         -- test if the door is open
+   expose state
+   return state
 
-::method string        -- return a string value for a door
-  expose state id
-  if state then return "Door" id "is open"
-  else return "Door" id "is closed"
+::method string         -- return a string value for a door
+   expose state id
+   if state then
+      return "Door" id "is open"
+   else
+      return "Door" id "is closed"
 
-::method state         -- return door state as a descriptive string
-  expose state
-  if state then return "open"
-  else return "closed"
+::method state          -- return door state as a descriptive string
+   expose state
+   if state then
+      return "open"
+   else
+      return "closed"
